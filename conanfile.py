@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from conans import ConanFile, tools
+from conans import ConanFile, CMake, tools
 
 
 class FrozenConan(ConanFile):
@@ -14,6 +14,8 @@ class FrozenConan(ConanFile):
     author = "Bincrafters <bincrafters@gmail.com>"
     license = "Apache-2.0"
     exports = ["LICENSE.md"]
+    exports_sources = "CMakeLists.txt"
+    generators = "cmake"
     no_copy_source = True
     _source_subfolder = "source_subfolder"
     _commit_id = "5d59c0ad8a9358ce537c39dff3728dace5e1f00e"
@@ -24,9 +26,10 @@ class FrozenConan(ConanFile):
         os.rename(extracted_dir, self._source_subfolder)
 
     def package(self):
-        include_folder = os.path.join(self._source_subfolder, "include")
         self.copy(pattern="LICENSE", dst="licenses", src=self._source_subfolder)
-        self.copy(pattern="*", dst="include", src=include_folder)
+        cmake = CMake(self)
+        cmake.configure()
+        cmake.install()
 
     def package_id(self):
         self.info.header_only()

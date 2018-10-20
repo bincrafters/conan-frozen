@@ -1,5 +1,4 @@
-#include <cstdlib>
-#include <cstdio>
+#include <stdio.h>
 
 #include <frozen/map.h>
 
@@ -37,5 +36,5 @@ constexpr frozen::map<RELOC_i386, const char*, 10> e2s = {
 int main()
 {
 	printf("%s\n", e2s.at(RELOC_i386::R_386_GOT32));
-	return EXIT_SUCCESS;
+	return 0;
 }
