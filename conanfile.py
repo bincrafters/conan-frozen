@@ -8,7 +8,7 @@ import os
 class FrozenConan(ConanFile):
     name = "frozen"
     version = "20181020"
-    description = "Functions and types that are suggested for use by the C++ Core Guideline"
+    description = "A header-only, constexpr alternative to gperf for C++14 users."
     url = "https://github.com/serge-sans-paille/frozen"
     license = "Apache-2.0"
     exports = ["LICENSE.md"]
