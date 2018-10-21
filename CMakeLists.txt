@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0.2)
 
-project(conan_cmake_wrapper)
+project(cmake_wrapper)
 
 message(STATUS "Conan CMake Wrapper")
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
