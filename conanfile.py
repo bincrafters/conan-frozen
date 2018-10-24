@@ -14,7 +14,7 @@ class FrozenConan(ConanFile):
     author = "Bincrafters <bincrafters@gmail.com>"
     license = "Apache-2.0"
     exports = ["LICENSE.md"]
-    exports_sources = "CMakeLists.txt"
+    exports_sources = ("CMakeLists.txt", "frozen.patch")
     generators = "cmake"
     no_copy_source = True
     _source_subfolder = "source_subfolder"
@@ -24,6 +24,7 @@ class FrozenConan(ConanFile):
         tools.get("{0}/archive/{1}.zip".format(self.homepage, self._commit_id))
         extracted_dir = "frozen-" + self._commit_id
         os.rename(extracted_dir, self._source_subfolder)
+        tools.patch(base_path=self._source_subfolder, patch_file="frozen.patch")
 
     def package(self):
         self.copy(pattern="LICENSE", dst="licenses", src=self._source_subfolder)
