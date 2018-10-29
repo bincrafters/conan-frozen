@@ -24,12 +24,15 @@ class FrozenConan(ConanFile):
         tools.get("{0}/archive/{1}.zip".format(self.homepage, self._commit_id))
         extracted_dir = "frozen-" + self._commit_id
         os.rename(extracted_dir, self._source_subfolder)
-        tools.patch(base_path=self._source_subfolder, patch_file="frozen.patch")
 
     def package(self):
         self.copy(pattern="LICENSE", dst="licenses", src=self._source_subfolder)
         cmake = CMake(self)
         cmake.configure()
+        # write_basic_package_version_file is not portable on Windows
+        tools.replace_in_file(file_path=os.path.join(self.build_folder, self._source_subfolder, "frozenConfigVersion.cmake"),
+                              search='# check that the installed version has the same',
+                              replace="return() #")
         cmake.install()
 
     def package_id(self):

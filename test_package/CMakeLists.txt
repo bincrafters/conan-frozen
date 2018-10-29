@@ -6,7 +6,7 @@ set(CMAKE_VERBOSE_MAKEFILE TRUE)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
-find_package(frozen CONFIG REQUIRED)
+find_package(frozen 1.0.0 CONFIG REQUIRED)
 
 add_executable(${CMAKE_PROJECT_NAME} test_package.cpp)
 target_link_libraries(${CMAKE_PROJECT_NAME} frozen::frozen)
