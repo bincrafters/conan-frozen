@@ -2,7 +2,7 @@
 
 | Bintray | Appveyor | Travis |
 |---------|-----------|--------|
-|[![Download](https://api.bintray.com/packages/bincrafters/public-conan/frozen%3Abincrafters/images/download.svg)](https://bintray.com/bincrafters/public-conan/frozen%3Abincrafters/_latestVersion)|[![Build status](https://ci.appveyor.com/api/projects/status/sd573hv5vmhv32o4?svg=true)](https://ci.appveyor.com/project/BinCrafters/conan-frozen)|[![Build Status](https://travis-ci.org/bincrafters/conan-frozen.svg?branch=stable%2F20181020)](https://travis-ci.org/bincrafters/conan-frozen)|
+|[![Download](https://api.bintray.com/packages/bincrafters/public-conan/frozen%3Abincrafters/images/download.svg)](https://bintray.com/bincrafters/public-conan/frozen%3Abincrafters/_latestVersion)|[![Build status](https://ci.appveyor.com/api/projects/status/sd573hv5vmhv32o4?svg=true)](https://ci.appveyor.com/project/BinCrafters/conan-frozen)|[![Build Status](https://travis-ci.com/bincrafters/conan-frozen.svg?branch=stable%2F20181020)](https://travis-ci.com/bincrafters/conan-frozen)|
 
 ## Conan.io Information
 
