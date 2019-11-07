@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import os
 from conans import ConanFile, CMake, tools
 
@@ -11,7 +8,6 @@ class FrozenConan(ConanFile):
     description = "A header-only, constexpr alternative to gperf for C++14 users."
     homepage = "https://github.com/serge-sans-paille/frozen"
     url = "https://github.com/bincrafters/conan-frozen"
-    author = "Bincrafters <bincrafters@gmail.com>"
     license = "Apache-2.0"
     exports = ["LICENSE.md"]
     exports_sources = ("CMakeLists.txt", "frozen.patch")
