@@ -9,7 +9,6 @@ class FrozenConan(ConanFile):
     homepage = "https://github.com/serge-sans-paille/frozen"
     url = "https://github.com/bincrafters/conan-frozen"
     license = "Apache-2.0"
-    exports = ["LICENSE.md"]
     exports_sources = ("CMakeLists.txt", "frozen.patch")
     generators = "cmake"
     no_copy_source = True
